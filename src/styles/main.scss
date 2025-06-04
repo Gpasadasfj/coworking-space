@@ -1,0 +1,149 @@
+@use "./_colors.scss" as col;
+@use "./_fonts.scss" as font;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  font-family: font.$primary_font;
+  max-width: 1600px;
+  padding: 0 100px;
+  margin: 0 auto;
+  background-image: url(../../img/ornament.svg);
+  background-repeat: no-repeat;
+  background-size: 400px 100%;
+  background-position: top 80px left;
+}
+
+header {
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+  padding-top: 30px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    justify-self: flex-start;
+  }
+}
+
+.main-menu {
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 56px;
+    a {
+      text-decoration: none;
+      padding: 10px 15px;
+      color: col.$title-color;
+      &.main-menu-home {
+        color: col.$secondary-color;
+      }
+    }
+    a:hover {
+      color: col.$secondary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  .search {
+    margin-right: 20px;
+  }
+  &-sign-in {
+    color: col.$secondary-color;
+    padding: 10px 30px;
+    &:hover {
+      background-color: col.$secondary-color;
+      color: col.$background-color;
+    }
+  }
+  &-sign-up {
+    color: col.$background-color;
+    background-color: col.$secondary-color;
+    padding: 10px 30px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.hero {
+  background-image: url(../../img/Placeholder.jpg);
+  background-repeat: no-repeat;
+  background-size: 60% 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  &-content {
+    width: 40%;
+    padding: 20px;
+    backdrop-filter: blur(2px);
+    background-color: rgb(255, 255, 255, 0.8);
+    margin-top: 50px;
+    margin-right: 100px;
+    &-title {
+      font-size: 56px;
+      font-family: font.$title_font;
+      width: 80%;
+      margin: 0;
+      position: relative;
+    }
+    &-title::before {
+      content: "";
+      width: 72px;
+      height: 8px;
+      background-color: col.$secondary-color;
+      position: absolute;
+      top: 17%;
+      right: -55px;
+    }
+    &-text {
+      color: col.$subtitle-color;
+      width: 79%;
+    }
+  }
+  .workspace-highlights {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    column-gap: 50px;
+    margin-right: 8%;
+    p {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+.coworking-info {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 200px;
+  article {
+    width: 20%;
+    h3 {
+      font-weight: 500;
+      font-size: 24px;
+      width: 120%;
+      margin: 5px;
+    }
+    p {
+      color: col.$subtitle-color;
+      margin: 5px;
+    }
+  }
+}
